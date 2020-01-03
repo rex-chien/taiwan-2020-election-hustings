@@ -6,7 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-ckiptagger = {extras = ["gdown", "tfgpu"],version = "*"}
+numpy = "*"
+gdown = "*"
+ckiptagger = "*"
+tensorflow = "==1.13.1"
+wordcloud = "*"
 
 [requires]
 python_version = "3.7"
