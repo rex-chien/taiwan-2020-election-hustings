@@ -195,3 +195,6 @@ dmypy.json
 .idea/*.iml
 
 logs/
+
+# ignore CKIP models
+data/
