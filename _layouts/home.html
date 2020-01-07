@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="row">
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in site.posts -%}
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ post.title | escape }}</h3>
+          <div class="mb-1 text-muted">{{ post.date | date: date_format }}</div>
+          <a href="{{ post.url | relative_url }}" class="stretched-link">閱讀內容</a>
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
+  {%- endif -%}
+
+</div>

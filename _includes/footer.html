@@ -1,0 +1,26 @@
+<footer class="blog-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 footer-col">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+            </li>
+            {%- if site.email -%}
+            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- endif -%}
+        </ul>
+      </div>
+      <div class="col-4 footer-col">
+        {%- include social.html -%}
+      </div>
+      <div class="col-4 footer-col">
+        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      </div>
+    </div>
+  </div>
+</footer>
