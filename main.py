@@ -8,6 +8,15 @@ ignored_pos = {'V_2', 'DE', 'SHI', 'COLONCATEGORY', 'COMMACATEGORY', 'DASHCATEGO
                'SEMICOLONCATEGORY', 'SPCHANGECATEGORY', 'WHITESPACE',
                'Nh', 'Nf', 'T', 'Nep', 'D', 'Neu', 'Di', 'Caa', 'Cab', 'Cba', 'Cbb'}
 
+
+def init_ckip_models():
+    from ckiptagger import data_utils
+    if not os.path.isdir('data'):
+        data_utils.download_data('./')
+
+init_ckip_models()
+
+
 ws_cls = WS('data')
 pos_cls = POS('data')
 ner_cls = NER('data')
@@ -26,21 +35,13 @@ def find_files_in_dir(directory, file_pattern):
                 yield os.path.join(root, file_name)
 
 
-def init_ckip_models():
-    from ckiptagger import data_utils
-    if not os.path.isdir('data'):
-        data_utils.download_data('./')
-
-
 def main():
-    init_ckip_models()
-    
     global ws_cls
     global pos_cls
     global ner_cls
     global wordcloud
 
-    src_files = find_files_in_dir('./transcripts', '*.txt')
+    src_files = find_files_in_dir('./transcripts/2019-12-29-president-debate', '*.txt')
     for file_path in src_files:
         with open(file_path, encoding='utf-8') as f:
             content = '\n'.join(f.readlines())
