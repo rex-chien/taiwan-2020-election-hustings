@@ -9,7 +9,7 @@ verify_ssl = true
 numpy = "*"
 gdown = "*"
 ckiptagger = "*"
-tensorflow = "==1.13.1"
+tensorflow = "==1.15.2"
 wordcloud = "*"
 
 [requires]
